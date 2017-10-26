@@ -2,7 +2,7 @@
 
 An experimental multi-platform runner for Jest
 
-![example](blob:https://imgur.com/ffd0b15c-e475-4c90-a119-21e6f562b114)
+![example](https://i.imgur.com/QDbZP9V.gifv)
 
 ## What's it about?
 I do want to be sure that rendering (or other stuff) is the same on both (Android and iOS) platforms for RN.
