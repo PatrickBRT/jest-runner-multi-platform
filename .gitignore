@@ -1,0 +1,6 @@
+node_modules
+projects
+yarn-error.log
+build
+coverage
+.idea/

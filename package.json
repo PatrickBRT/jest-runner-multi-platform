@@ -1,0 +1,29 @@
+{
+  "name": "jest-runner-multi-platform",
+  "version": "0.3.0",
+  "main": "build/index.js",
+  "author": "Patrick Bichler <bichlerpatrick@gmail.com>",
+  "description": "An experimental multi platform runner for Jest",
+  "license": "MIT",
+  "files": [
+    "build/"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "watch": "babel src -w --ignore **/*.test.js,integration -d build",
+    "build": "babel src --ignore **/*.test.js,integration -d build",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "jest-runner": "^21.2.1",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-jest": "21.0.0",
+    "babel-preset-env": "1.6.0",
+    "jest": "21.0.1",
+    "prettier": "1.5.3"
+  }
+}
