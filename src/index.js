@@ -1,26 +1,12 @@
-const throat = require('throat');
-const pify = require('pify');
-const workerFarm = require('worker-farm');
-const path = require('path');
+import multiPlatformRunner from './runMultiPlatform';
 
-const runner = require('./runMultiPlatform.js')
+class MultiPlatformTestRunner {
+    constructor(globalConfig) {
+        this._globalConfig = globalConfig;
+    }
 
-class CancelRun extends Error {
-  constructor(message) {
-    super(message);
-    this.name = 'CancelRun';
-  }
-}
-
-module.exports = class ESLintTestRunner {
-  constructor(globalConfig) {
-    this._globalConfig = globalConfig;
-  }
-
-  // eslint-disable-next-line
   async runTests(tests, watcher, onStart, onResult, onFailure, options) {
-    return runner(this._globalConfig,
-    {
+    return multiPlatformRunner(this._globalConfig, {
         watcher,
         tests,
         onStart,
@@ -30,3 +16,5 @@ module.exports = class ESLintTestRunner {
     });
   }
 };
+
+module.exports = MultiPlatformTestRunner;
